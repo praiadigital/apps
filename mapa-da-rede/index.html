@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa da Rede — Praia Digital</title>
+<meta name="description" content="Mapa visual de toda a rede de apps Praia Digital: navegue por perfil — comprador, investidor, anfitrião ou corretor.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
+  body{background:#0c4a6e;color:#e0f2fe;min-height:100vh}
+  header{background:#075985;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+  header a{color:#fff;text-decoration:none;font-weight:700}.logo{font-size:1.2rem}
+  main{max-width:900px;margin:2rem auto;padding:0 1rem}
+  h1{font-size:1.6rem;text-align:center}
+  .sub{text-align:center;color:#7dd3fc;margin:.4rem 0 1.5rem}
+  .trilha{margin-bottom:1.5rem}
+  .trilha h2{font-size:1rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem}
+  .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem}
+  .app{background:#0e7490;background:rgba(255,255,255,.08);border:1px solid rgba(125,211,252,.25);border-radius:12px;padding:.9rem 1rem;text-decoration:none;color:#fff;font-size:.9rem;transition:transform .15s,background .15s}
+  .app:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+  .app small{display:block;color:#bae6fd;margin-top:.15rem;font-size:.78rem}
+  footer{text-align:center;padding:2rem;color:#7dd3fc;font-size:.85rem}
+  footer a{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="https://praia.digital/">🏖️ Praia Digital</a>
+  <a href="https://praia.digital/apps">← Rede de apps</a>
+</header>
+<main>
+  <h1>🗺️ Mapa da Rede</h1>
+  <p class="sub">24+ ferramentas organizadas pela sua jornada. Escolha seu perfil:</p>
+
+  <div class="trilha">
+    <h2>🏠 Quero Comprar</h2>
+    <div class="apps">
+      <a class="app" href="https://praia.digital/simulador-credito/elegibilidade/">Elegibilidade FGTS<small>Posso usar FGTS? Qual faixa MCMV?</small></a>
+      <a class="app" href="https://praia.digital/simulador-credito/">Simulador de Crédito<small>Parcela e capacidade de financiamento</small></a>
+      <a class="app" href="https://praia.digital/calculadora-custos/entrada-ideal/">Entrada Ideal<small>Quanto dar de entrada?</small></a>
+      <a class="app" href="https://praia.digital/calculadora-custos/">Custos de Compra<small>ITBI, cartório e taxas</small></a>
+      <a class="app" href="https://praia.digital/simulador-credito/amortizacao/">Amortização<small>Prazo vs parcela</small></a>
+      <a class="app" href="https://praia.digital/praiadigital-site/quiz-imovel-ideal/">Quiz Imóvel Ideal<small>Descubra seu perfil</small></a>
+    </div>
+  </div>
+
+  <div class="trilha">
+    <h2>📈 Quero Investir</h2>
+    <div class="apps">
+      <a class="app" href="https://praia.digital/guia-litoral/ranking-cidades/">Ranking de Cidades<small>Onde investir agora</small></a>
+      <a class="app" href="https://praia.digital/guia-litoral/comparador-cidades/">Comparador de Cidades<small>Lado a lado</small></a>
+      <a class="app" href="https://praia.digital/avaliador-imoveis/">Avaliador IA<small>Quanto vale o imóvel?</small></a>
+      <a class="app" href="https://praia.digital/avaliador-imoveis/projecao-valorizacao/">Projeção de Valorização<small>1, 5 e 10 anos</small></a>
+      <a class="app" href="https://praia.digital/simulador-roi/">Simulador ROI<small>Retorno de temporada</small></a>
+      <a class="app" href="https://praia.digital/simulador-roi/payback/">Payback<small>Quando o imóvel se paga</small></a>
+      <a class="app" href="https://praia.digital/simulador-roi/airbnb-vs-anual/">Airbnb vs Anual<small>Ponto de equilíbrio</small></a>
+      <a class="app" href="https://praia.digital/apps/painel-mercado/">Painel de Mercado<small>Indicadores ao vivo</small></a>
+    </div>
+  </div>
+
+  <div class="trilha">
+    <h2>🛎️ Sou Anfitrião</h2>
+    <div class="apps">
+      <a class="app" href="https://praia.digital/ferramentas/">Kit do Anfitrião<small>Calculadora + checklist</small></a>
+      <a class="app" href="https://praia.digital/area-anfitriao/precificador-dinamico/">Precificador Dinâmico<small>Preço ideal por data</small></a>
+      <a class="app" href="https://praia.digital/area-anfitriao/calendario-sazonal/">Calendário Sazonal<small>Mês a mês</small></a>
+      <a class="app" href="https://praia.digital/ferramentas/contrato-temporada/">Contrato de Temporada<small>Minuta personalizada</small></a>
+      <a class="app" href="https://praia.digital/gerador-descricoes/">Gerador de Descrições<small>Anúncios que convertem</small></a>
+      <a class="app" href="https://praia.digital/gerador-descricoes/titulos-anuncio/">Títulos de Anúncio<small>CTR alto</small></a>
+    </div>
+  </div>
+
+  <div class="trilha">
+    <h2>💼 Sou Corretor</h2>
+    <div class="apps">
+      <a class="app" href="https://praia.digital/portal-corretores/">Portal do Corretor<small>Scripts + comissões</small></a>
+      <a class="app" href="https://praia.digital/portal-corretores/planejador-metas/">Planejador de Metas<small>Funil reverso</small></a>
+      <a class="app" href="https://praia.digital/hermes-agents/playground/">Playground Hermes<small>IA em ação</small></a>
+      <a class="app" href="https://praia.digital/hermes-agents/roi-ia/">ROI de IA<small>Impacto da automação</small></a>
+      <a class="app" href="https://praia.digital/blog-litoral/gerador-pautas/">Pautas SEO<small>Conteúdo que atrai</small></a>
+      <a class="app" href="https://praia.digital/blog-litoral/titulos-magneticos/">Títulos Magnéticos<small>Headlines de alto CTR</small></a>
+    </div>
+  </div>
+
+  <div class="trilha">
+    <h2>🧭 Não sabe por onde começar?</h2>
+    <div class="apps">
+      <a class="app" href="https://praia.digital/apps/recomendador/">Recomendador Inteligente<small>Quiz de 3 perguntas</small></a>
+      <a class="app" href="https://praia.digital/radar-ofertas/">Radar de Ofertas<small>Alertas no WhatsApp</small></a>
+      <a class="app" href="https://praia.digital/guia-praias/">Guia de Praias<small>Explore por perfil</small></a>
+    </div>
+  </div>
+</main>
+<footer>Feito com 🌊 pela rede <a href="https://praia.digital/">praia.digital</a> — cada app é um repositório GitHub Pages independente</footer>
+</body>
+</html>
