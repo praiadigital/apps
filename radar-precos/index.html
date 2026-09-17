@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar de Preços — Praia Digital</title>
+<meta name="description" content="Configure alertas de queda de preço por m² no litoral paulista e seja avisado quando surgir uma oportunidade.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
+  body{background:#f0f9ff;color:#0f172a;min-height:100vh}
+  header{background:linear-gradient(135deg,#0077B6,#00B4D8);color:#fff;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+  header a{color:#fff;text-decoration:none;font-weight:700}.logo{font-size:1.2rem}
+  main{max-width:680px;margin:2rem auto;padding:0 1rem}
+  .card{background:#fff;border-radius:16px;padding:1.75rem;box-shadow:0 4px 24px rgba(0,60,100,.08)}
+  h1{font-size:1.5rem;color:#0077B6}.sub{color:#64748b;margin:.3rem 0 1.2rem;font-size:.95rem}
+  label{display:block;font-weight:600;font-size:.85rem;margin:.9rem 0 .3rem}
+  input,select{width:100%;padding:.7rem;border:1px solid #cbd5e1;border-radius:10px;font-size:1rem}
+  button{width:100%;margin-top:1.3rem;padding:.95rem;border:0;border-radius:12px;background:#25d366;color:#fff;font-weight:800;font-size:1.05rem;cursor:pointer}
+  .atual{margin-top:1rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1rem;font-size:.9rem;display:none}
+  .alvo{color:#166534;font-weight:800}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="https://praia.digital/">🏖️ Praia Digital</a>
+  <a href="https://praia.digital/apps">← Rede de apps</a>
+</header>
+<main>
+  <div class="card">
+    <h1>📉 Radar de Preços</h1>
+    <p class="sub">Defina o preço por m² que você quer pagar. Quando o mercado bater esse alvo, avisamos você.</p>
+    <label>Cidade</label>
+    <select id="cidade">
+      <option value="7500">Guarujá (hoje: R$ 7.500/m²)</option><option value="6800">Bertioga (R$ 6.800/m²)</option>
+      <option value="6200">Santos (R$ 6.200/m²)</option><option value="5800">São Vicente (R$ 5.800/m²)</option>
+      <option value="5400">Praia Grande (R$ 5.400/m²)</option><option value="4700">Mongaguá (R$ 4.700/m²)</option>
+      <option value="4400">Itanhaém (R$ 4.400/m²)</option><option value="4200">Peruíbe (R$ 4.200/m²)</option>
+    </select>
+    <label>Preço-alvo por m² (R$)</label>
+    <input type="number" id="alvo" value="6000" step="500">
+    <label>Área desejada (m²)</label>
+    <input type="number" id="area" value="70">
+    <button onclick="ativar()">🔔 Criar alerta no WhatsApp</button>
+    <div class="atual" id="out"></div>
+  </div>
+</main>
+<script>
+function ativar(){
+  var sel=document.getElementById('cidade');
+  var cidade=sel.options[sel.selectedIndex].text.split(' (')[0];
+  var atual=parseFloat(sel.value);
+  var alvo=parseFloat(document.getElementById('alvo').value)||0;
+  var area=parseFloat(document.getElementById('area').value)||0;
+  var fmt=function(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0})};
+  var economia=(atual-alvo)*area;
+  var desc=alvo<atual?'Queda necessária: '+Math.round((1-alvo/atual)*100)+'% — economia de '+fmt(economia)+' num imóvel de '+area+'m²':'Seu alvo já está abaixo do preço atual em '+cidade+'! Hora de comprar?';
+  document.getElementById('out').innerHTML='📊 Preço atual: '+fmt(atual)+'/m² · Seu alvo: <span class="alvo">'+fmt(alvo)+'/m²</span><br>'+desc;
+  document.getElementById('out').style.display='block';
+  var msg='📉 RADAR DE PREÇOS\n\nCidade: '+cidade+'\nAlvo: '+fmt(alvo)+'/m² (atual: '+fmt(atual)+')\nÁrea: '+area+'m²\n\nMe avise quando bater esse preço!';
+  window.open('https://wa.me/5511954346288?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
+</body>
+</html>
